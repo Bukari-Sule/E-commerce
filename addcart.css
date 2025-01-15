@@ -90,7 +90,7 @@ header{
     font-size: 18px;
     font-weight: 500;
 }
-.price-and-cart .addcart{
+.price-and-cart .add-cart{
     padding: 10px;
     border-radius: 6px;
     font-size: 20px;
@@ -112,7 +112,7 @@ header{
     padding: 65px 20px 40px;
     z-index: 100;
     overflow: auto;
-    transition: 0.5s;
+    transition: 0.7s;
 }
 
 .cart.active{
