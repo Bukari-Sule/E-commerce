@@ -41,7 +41,7 @@ const addToCart = productBox => {
                             <button id="increment">+</button>
                         </div>
                     </div>
-                    <i class='bx bxs-basket cart-remove'></i> 
+                    <i class='bx bx-trash cart-remove'></i> 
          `;
 
          cartContent.appendChild(cartBox);
@@ -103,22 +103,23 @@ const updateCartCount = change => {
     } else {
         cartItemCountBadge.style.visibility = "hidden";
         cartItemCountBadge.textContent = "";
-    };
+    }
 };
 
 const buyNowButton = document.querySelector(".btn-buy");
 buyNowButton.addEventListener("click", () => {
     const cartBoxes = cartContent.querySelectorAll(".cart-box");
-    if (cartBoxes = length === 0) {
-        alert("Your cart is emty. Please add items to your cart before buying.");
+    if (cartBoxes.length === 0) {
+        alert("Your cart is empty");
         return;
-    };
-    cartBoxes.forEach(cartBox => cartBox.remove());
+    }
+
+    cartBoxes.forEach(cartbox => cartbox.remove());
 
     cartItemCount = 0;
     updateCartCount(0);
 
     updateTotalPrice();
 
-    alert("Thank you for your purchase!");
+    alert("Thank you for purchase...");
 });
