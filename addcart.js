@@ -15,6 +15,7 @@ addCartButtons.forEach(button => {
 const cartContent = document.querySelector(".cart-content");
 const addToCart = productBox => {
          const productImgSrc = productBox.querySelector("img").src;
+         const productDetail = productBox.querySelector(".product-detail").textContent;
          const productTitle = productBox.querySelector(".product-title").textContent;
          const productPrice = productBox.querySelector(".price").textContent;
 
@@ -29,9 +30,10 @@ const addToCart = productBox => {
          const cartBox = document.createElement("div");
          cartBox.classList.add("cart-box");
          cartBox.innerHTML = `
-         <img src="${productImgSrc}" class="cart-img" alt="">
+                         <img src="${productImgSrc}" class="cart-img" alt="">
                     <div class="cart-detail">
                         <h2 class="cart-product-title">${productTitle}</h2>
+                        <p class="cart-product-detail">${productDetail}</p>
                         <span class="cart-price">${productPrice}</span>
                         <div class="cart-quantity">
                             <button id="decrement">-</button>
@@ -118,5 +120,5 @@ buyNowButton.addEventListener("click", () => {
 
     updateTotalPrice();
 
-    alert("Thank you for your purhase!");
+    alert("Thank you for your purchase!");
 });
